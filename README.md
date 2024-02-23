@@ -1,7 +1,9 @@
-
 Jon Pendon
+
 jap229@njit.edu
+
 CS 643 Programming Assignment 1
+
 
 ## Prerequisites
 This guide assumes you have the following:
@@ -95,8 +97,11 @@ When this command is ran, the EC2 Instance should have a java installed. Check w
 
 ## Running the application
 In the PuTTY window corresponding to the `TextRecognitionApplication`, enter `java -jar textrecognition-1.0-FINAL-jar-with-dependencies.jar`
+
 In the PuTTY window corresponding to the `CarRecognitionApplicaiton`, enter `java -jar carrecognition-1.0-FINAL-jar-with-dependencies.jar`
 
 The text recognition instance should stall in searching for queue until the car recognition instance creates a queue and sends information.
+
 An `output.txt` will be generated in the instance with the text recognition application.
+
 Open WinSCP and navigate to the folder with the text recognition application. Refresh and there should be an output.txt that can be opened.
