@@ -14,13 +14,13 @@ This guide assumes you have the following:
  - [x] PuTTY
 
 ## Compilation
-1. Open terminal in ./carrecognition folder
-2. In the terminal type: mvn compile assembly:single
-	- This should retrieve a .jar file with dependencies in the ./carrecognition/target folder
+1. Open terminal in `./carrecognition` folder
+2. In the terminal type: `mvn compile assembly:single`
+	- This should retrieve a .jar file with dependencies in the `./carrecognition/target` folder
 	- The jar should be named `carrecognition-1.0-FINAL-jar-with-dependencies.jar`.
-3. Open terminal in ./textrecognition folder
-4. In the terminal type: mvn compile assembly:single
-	- This should retrieve a .jar file with dependencies in the ./textrecognition/target folder
+3. Open terminal in `./textrecognition` folder
+4. In the terminal type: `mvn compile assembly:single`
+	- This should retrieve a .jar file with dependencies in the `./textrecognition/target` folder
 	- The jar should be named `textrecognition-1.0-FINAL-jar-with-dependencies.jar`.
 5. These jar files will need to go into their respective EC2 Instances.
 
@@ -55,7 +55,7 @@ This guide assumes you have the following:
 	 - `<IP-V4 DNS>` corresponds to the Public IPv4 DNS information in the
 	    EC2's Details Note: This IP-V4 will change every time
  3. Go to Category -> Connection -> SSH -> Auth -> Credentials
-	 a. In the Private key file for authentication: section, browse for the
+	 - In the `Private key file for authentication:` section, browse for the
     .ppk file created for this instance.
 
 ## AWS Configuration
@@ -65,7 +65,7 @@ This guide assumes you have the following:
  2. Insert the access key id, secret access key, and region name. Leave
     the output format blank.
 	 - This information is located in the AWS Details -> AWS CLI of the Vocareum page
-	 - aws configure generates a .aws folder and puts this information in the credentials file
+	 - `aws configure` generates a `.aws` folder and puts this information in the credentials file
  3. Type `cd .aws`
  4. Type `vi credentials`
  5. Delete everything in the file and then copy paste the AWS CLI information into the file.
@@ -79,19 +79,20 @@ Both EC2 Instances need Java installed to run.
  2. Enter `y` to install java.
 
 When this command is ran, the EC2 Instance should have a java installed. Check with `java -version`
+
 `java -version` should return build 1.8 for Correto-8.
 
 ## FTP Jar files into EC2 Instance 
 
  1. Open WinSCP
- 2. Enter Host name as the <IP-V4 DNS> located in the EC2 Instance Details -> Public IPv4 DNS
+ 2. Enter Host name as the `<IP-V4 DNS>` located in the EC2 Instance Details -> Public IPv4 DNS
  3. Enter ec2-user as the user name
  4. Click Advanced -> SSH -> Authentication
  5. Under Private key file, browse for the .ppk file.
-	- This should open a location in the ec2 instance that corresponds to the putty folder.
+	- This should open a location in the EC2 instance that corresponds to the putty folder.
  6. Drag and drop the .jar file into this folder. 
-	 - For the car ec2 this .jar should be carrecognition-1.0-FINAL-jar-with-dependencies.jar.
-	 - For the text ec2 this .jar file should be textrecognition-1.0-FINAL-jar-with-dependencies.jar.
+	 - For the car EC2 this .jar should be `carrecognition-1.0-FINAL-jar-with-dependencies.jar`.
+	 - For the text EC2 this .jar file should be `textrecognition-1.0-FINAL-jar-with-dependencies.jar`.
  7. Open a new tab for WinSCP and do the same thing for the other EC2 Instance.
 
 
